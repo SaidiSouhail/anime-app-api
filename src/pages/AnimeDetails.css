@@ -1,0 +1,152 @@
+.anime-details {
+  min-height: 100vh;
+  padding: 60px 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+
+  background: radial-gradient(circle at top, #141414, #0b0b0b);
+  color: white;
+}
+
+.anime-details img {
+  width: 340px;
+  border-radius: 18px;
+
+  object-fit: cover;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.7),
+    0 0 25px rgba(0, 255, 200, 0.15);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anime-details img:hover {
+  transform: scale(1.04);
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(255, 60, 120, 0.25);
+}
+
+.info {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info h1 {
+  font-size: 42px;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  background: linear-gradient(90deg, #ff3c78, #00f5d4, #4da3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 22px;
+  line-height: 1.8;
+
+  color: #d1d1d1;
+
+  padding: 15px;
+  border-left: 3px solid #00f5d4;
+
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.meta p {
+  padding: 12px 14px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 200, 0.1);
+
+  color: #ccc;
+  font-size: 14px;
+
+  transition: 0.3s ease;
+}
+
+.meta p:hover {
+  transform: translateY(-3px);
+  border-color: #ff3c78;
+  box-shadow: 0 0 15px rgba(255, 60, 120, 0.2);
+  color: white;
+}
+
+.loading-screen,
+.error-screen {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  color: white;
+
+  background: radial-gradient(circle, #141414, #0b0b0b);
+}
+
+@media (max-width: 768px) {
+  .anime-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .anime-details img {
+    width: 70%;
+    max-width: 320px;
+  }
+
+  .info h1 {
+    font-size: 30px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .anime-details {
+    padding: 20px;
+  }
+
+  .info h1 {
+    font-size: 24px;
+  }
+
+  .desc {
+    font-size: 13px;
+  }
+
+  .meta {
+    grid-template-columns: 1fr;
+  }
+
+  .meta p {
+    font-size: 13px;
+  }
+}
